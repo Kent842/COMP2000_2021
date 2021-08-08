@@ -1,5 +1,3 @@
-import java.awt.*;
-
 class Cell extends Rectangle{
     // fields
     static int size = 35;
