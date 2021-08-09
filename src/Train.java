@@ -1,4 +1,4 @@
-import javax.swing.*;
+
 import java.awt.*;
 
 class Train extends Actor {
