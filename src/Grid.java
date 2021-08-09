@@ -6,14 +6,8 @@ class Grid {
     ArrayList<ArrayList<Cell>> cells = new ArrayList<ArrayList<Cell>>();
 
     // constructor
-    public Grid() {
-        for (int i = 0; i < 20; i++) {
-            ArrayList<Cell> cellList = new ArrayList<Cell>();
-            cells.add(cellList);
-            for (int j = 0; j < 20; j++) {
-                cells.get(i).add(new Cell(10 + 35 * i, 10 + 35 * j));
-            }
-        }
+    public Grid(ArrayList<ArrayList<Cell>> newCellList) {
+        this.cells = newCellList;
     }
 
     // methods
