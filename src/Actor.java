@@ -1,13 +1,18 @@
 
 import java.awt.*;
 
-class Actor {
-    int size = 35;
+abstract class Actor {
+    Cell cellLocation;
+    Color color;
 
-    void paint(Graphics g) {}
-    Cell cell;
+    void paint(Graphics g) {
+        g.setColor(color);
+        g.fillRect(cellLocation.x, cellLocation.y, 35, 35);
+        g.drawRect(cellLocation.x, cellLocation.y, 35, 35);
+    };
 
-    public Actor() {
-        
+    public Actor(Cell c, Color cellColor) {
+        this.cellLocation = c;
+        this.color = cellColor;
     }
 }

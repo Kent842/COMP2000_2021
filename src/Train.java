@@ -2,20 +2,17 @@
 import java.awt.*;
 
 class Train extends Actor {
-    Cell cell;
 
     void paint(Graphics g) {
-        g.setColor(Color.RED);
-        g.fillRect(cell.x, cell.y, 35, 35);
-        g.drawRect(cell.x, cell.y, 35, 35);
+        super.paint(g);
     }
 
     public Train(Cell c) {
-        this.cell = c;
+        super(c, Color.RED);
     }
 
     public String toString() {
-        return cell.toString();
+        return super.cellLocation.toString();
     }
     
 }
