@@ -5,12 +5,11 @@ class Main extends JFrame {
     
     class App extends JPanel {
         
-        Grid grid; //Grid object
         Stage stage;
 
         public App() {
             setPreferredSize(new Dimension(720, 720)); //Set window dimensions
-            stage = new Stage(grid); //Create new Grid object
+            stage = new Stage(); //Create new Grid object
         }
 
         @Override

@@ -3,7 +3,7 @@ import java.awt.*;
 
 class Car extends Actor {
     
-    void paint(Graphics g) {
+    void paint(Graphics g) { //Calls the paint function of the Actor super-class to allow the cell to paint itself.
         super.paint(g);
     }
     

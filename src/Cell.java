@@ -11,7 +11,7 @@ class Cell extends Rectangle{
 
     //methods
     void paint(Graphics g, Point mousePos){
-        if(contains(mousePos)){
+        if(contains(mousePos)){ //Checks if the mouse is in the cell
             g.setColor(Color.GRAY);
         } else {
             g.setColor(Color.WHITE);
@@ -21,7 +21,7 @@ class Cell extends Rectangle{
         g.drawRect(x,y,size,size);
     }
 
-    public boolean contains(Point p){
+    public boolean contains(Point p){ //Returns true or false based on if the mouse is in the cell
         if(p != null) {
             return(super.contains(p));
         } else {

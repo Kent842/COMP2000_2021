@@ -79,8 +79,10 @@ Have the program start with 1 grid and 3 actors:
 Have a close look at your `Train`, `Car` and `Boat` classes.  If they are anything like mine they are _all the same except for the colour they use_.  This repetition is "a bad thing" because if the same thing is done in three different places, we need to remember that updating one requires us to update all three.
 
 Is there a place that you could put all the common parts?
+All common parts can be defined in the Actor super-class
 
 🤔 Will this work given what you currently have?  If not, what would we need to change?
+Yes this will work as each actor can call super.paint('color') and the function in the super-class will paint the colored square.
 
 # Task 9
 

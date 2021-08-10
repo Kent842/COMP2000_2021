@@ -6,7 +6,7 @@ class Stage {
     ArrayList<ArrayList<Cell>> cells = new ArrayList<ArrayList<Cell>>(); //Array containing the basic grid that needs to be printed
     ArrayList<Actor> actors = new ArrayList<Actor>(); //Array of all the actors
 
-    public Stage(Grid g) {
+    public Stage() {
         
         for (int i = 0; i < 20; i++) { //Generate the basic grid array
             ArrayList<Cell> cellList = new ArrayList<Cell>();
