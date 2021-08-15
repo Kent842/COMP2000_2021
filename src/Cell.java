@@ -3,10 +3,13 @@ import java.awt.*;
 class Cell extends Rectangle{
     // fields
     static int size = 35;
-
+    int heightAboveSea;
+    Color cellColor;
     //constructors
-    public Cell(int x, int y){
+    public Cell(int x, int y, int heightAbove, Color c){
         super(x,y,size,size);
+        this.heightAboveSea = heightAbove; //Stores the height above sea level for each cell.
+        this.cellColor = c; //Stores the color of each cell
     }
 
     //methods
@@ -14,7 +17,7 @@ class Cell extends Rectangle{
         if(contains(mousePos)){ //Checks if the mouse is in the cell
             g.setColor(Color.GRAY);
         } else {
-            g.setColor(Color.WHITE);
+            g.setColor(this.cellColor);
         }
         g.fillRect(x,y,size,size);
         g.setColor(Color.BLACK);
@@ -27,5 +30,9 @@ class Cell extends Rectangle{
         } else {
             return false;
         }
+    }
+
+    public String toString() {
+        return "X Pos:" + super.getLocation().x + "  " + "Y Pos: " + super.getLocation().y + "  " + "Sea Level: " + this.heightAboveSea;
     }
 }
