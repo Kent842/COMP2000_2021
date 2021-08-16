@@ -8,6 +8,7 @@ abstract class Environment {
     void paint(Graphics g) { //Allows each actor to paint itself in the specified cell
         g.setColor(color);
         g.fillRect(cellLocation.x, cellLocation.y, 35, 35);
+        g.setColor(Color.BLACK);
         g.drawRect(cellLocation.x, cellLocation.y, 35, 35);
     };
 

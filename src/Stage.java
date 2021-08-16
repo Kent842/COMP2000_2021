@@ -28,7 +28,7 @@ class Stage {
         }
         // int randomHeight = (int) (Math.random() * 6500) - 500;
 
-        grid = new Grid(cells); // Initialise the grid with the generated cells array
+        grid = new Grid(cells, environment); // Initialise the grid with the generated cells array
     }
 
     public void paint(Graphics g, Point mousePos) {
