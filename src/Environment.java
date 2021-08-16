@@ -1,7 +1,7 @@
 
 import java.awt.*;
 
-abstract class Actor {
+abstract class Environment {
     Cell cellLocation; //Stores the cell which is being colored
     Color color; //The color which the cell is going to be painted
 
@@ -11,7 +11,7 @@ abstract class Actor {
         g.drawRect(cellLocation.x, cellLocation.y, 35, 35);
     };
 
-    public Actor(Cell c, Color cellColor) {
+    public Environment(Cell c, Color cellColor) {
         this.cellLocation = c;
         this.color = cellColor;
     }
