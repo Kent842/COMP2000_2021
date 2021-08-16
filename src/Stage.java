@@ -26,7 +26,7 @@ class Stage {
                 System.out.println(environment.get(i));
             }
         }
-        //int randomHeight = (int) (Math.random() * 6500) - 500;
+        // int randomHeight = (int) (Math.random() * 6500) - 500;
 
         grid = new Grid(cells); // Initialise the grid with the generated cells array
     }
@@ -38,27 +38,27 @@ class Stage {
 
     private Environment generateCell(int determineCellType, Cell location) {
         if (determineCellType >= 1 && determineCellType <= 40) {
-            Grass g = new Grass(location, Color.GREEN);
+            Grass g = new Grass(location);
             return g;
         }
 
         if (determineCellType >= 41 && determineCellType <= 65) {
-            Mountain m = new Mountain(location, Color.YELLOW);
+            Mountain m = new Mountain(location);
             return m;
         }
 
         if (determineCellType >= 66 && determineCellType <= 85) {
-            Water w = new Water(location, Color.BLUE);
+            Water w = new Water(location);
             return w;
         }
 
         if (determineCellType >= 86 && determineCellType <= 95) {
-            Road r = new Road(location, Color.GRAY);
+            Road r = new Road(location);
             return r;
         }
 
         if (determineCellType >= 96 && determineCellType <= 100) {
-            Building b = new Building(location, new Color(150,75,0));
+            Building b = new Building(location);
             return b;
         }
         return null;
