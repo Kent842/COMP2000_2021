@@ -1,7 +1,7 @@
 import java.awt.*;
 
 public class Road extends Environment {
-    public Road(Cell c) {
-        super(c, Color.GRAY);
+    public Road(Cell c, int height) {
+        super(c, Color.GRAY, height);
     }
 }

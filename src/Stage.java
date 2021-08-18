@@ -23,42 +23,40 @@ class Stage {
             for (int j = 0; j < 20; j++) {
                 int cellGenerator = (int) (Math.random() * 100) + 1;
                 environment.get(i).add(generateCell(cellGenerator, cells.get(i).get(j)));
-                System.out.println(environment.get(i));
+                System.out.println(environment.get(i).get(j).heightAboveSeaLevel);
             }
         }
-        // int randomHeight = (int) (Math.random() * 6500) - 500;
 
         grid = new Grid(cells, environment); // Initialise the grid with the generated cells array
     }
 
     public void paint(Graphics g, Point mousePos) {
         grid.paint(g, mousePos); // Paint the basic grid
-
     }
 
     private Environment generateCell(int determineCellType, Cell location) {
         if (determineCellType >= 1 && determineCellType <= 40) {
-            Grass g = new Grass(location);
+            Grass g = new Grass(location, (int)(Math.random() * 6500) - 500);
             return g;
         }
 
         if (determineCellType >= 41 && determineCellType <= 65) {
-            Mountain m = new Mountain(location);
+            Mountain m = new Mountain(location, (int)(Math.random()* 6500) - 500);
             return m;
         }
 
         if (determineCellType >= 66 && determineCellType <= 85) {
-            Water w = new Water(location);
+            Water w = new Water(location, (int)(Math.random()* 6500) - 500);
             return w;
         }
 
         if (determineCellType >= 86 && determineCellType <= 95) {
-            Road r = new Road(location);
+            Road r = new Road(location, (int)(Math.random()* 6500) - 500);
             return r;
         }
 
         if (determineCellType >= 96 && determineCellType <= 100) {
-            Building b = new Building(location);
+            Building b = new Building(location, (int)(Math.random()* 6500) - 500);
             return b;
         }
         return null;
