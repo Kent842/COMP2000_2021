@@ -23,7 +23,6 @@ class Stage {
             for (int j = 0; j < 20; j++) {
                 int cellGenerator = (int) (Math.random() * 100) + 1;
                 environment.get(i).add(generateCell(cellGenerator, cells.get(i).get(j)));
-                System.out.println(environment.get(i).get(j).heightAboveSeaLevel);
             }
         }
 
@@ -34,7 +33,7 @@ class Stage {
         grid.paint(g, mousePos); // Paint the basic grid
     }
 
-    private Environment generateCell(int determineCellType, Cell location) {
+    private Environment generateCell(int determineCellType, Cell location) { //Returns a cell based on random number passed in
         if (determineCellType >= 1 && determineCellType <= 40) {
             Grass g = new Grass(location, (int)(Math.random() * 6500) - 500);
             return g;
