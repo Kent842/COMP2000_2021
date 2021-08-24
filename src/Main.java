@@ -8,7 +8,7 @@ class Main extends JFrame {
         Stage stage;
 
         public App() {
-            setPreferredSize(new Dimension(720, 720)); //Set window dimensions
+            setPreferredSize(new Dimension(1024, 720)); //Set window dimensions
             stage = new Stage(); //Create new Grid object
         }
 
@@ -33,9 +33,12 @@ class Main extends JFrame {
         this.setVisible(true);
     }
 
-    public void run() {
+    public void run() { //Constantly refreshes the page's frames
         while (true) {
-            this.repaint(); //Constantly refreshes the page's frames
+            this.repaint();
+            try {
+                Thread.sleep(20);
+            } catch(InterruptedException e){}
         }
     }
 }

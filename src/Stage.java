@@ -17,10 +17,10 @@ class Stage {
             }
         }
 
-        for (int i = 0; i < 20; i++) { // Generate the list of environment blocks
+        for (int i = 0; i < cells.size(); i++) { // Generate the list of environment blocks
             ArrayList<Environment> envList = new ArrayList<Environment>();
             environment.add(envList);
-            for (int j = 0; j < 20; j++) {
+            for (int j = 0; j < cells.size(); j++) {
                 int cellGenerator = (int) (Math.random() * 100) + 1;
                 environment.get(i).add(generateCell(cellGenerator, cells.get(i).get(j)));
             }
@@ -31,6 +31,13 @@ class Stage {
 
     public void paint(Graphics g, Point mousePos) {
         grid.paint(g, mousePos); // Paint the basic grid
+
+        Optional<Environment> underMouse = grid.cellAtPoint(mousePos);
+        if(underMouse.isPresent()) { //Works good
+            Environment hover = underMouse.get();
+            
+            g.drawString(String.valueOf(hover) + String.valueOf(hover), 740, 30);
+        }
     }
 
     private Environment generateCell(int determineCellType, Cell location) { //Returns a cell based on random number passed in
@@ -58,6 +65,7 @@ class Stage {
             Building b = new Building(location, (int)(Math.random()* 6500) - 500);
             return b;
         }
+
         return null;
     }
 

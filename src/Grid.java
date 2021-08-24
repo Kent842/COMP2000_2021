@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.Point;
 import java.util.*;
 
 class Grid {
@@ -16,8 +17,20 @@ class Grid {
         for (int i = 0; i < 20; i++) {
             for (int j = 0; j < 20; j++) {
                 cells.get(i).get(j).paint(g, mousePos);
-                environment.get(i).get(j).paint(g);
+                environment.get(i).get(j).paint(g, mousePos);
             }
         }
+    }
+
+    public Optional<Environment> cellAtPoint(Point p) {
+        for(int i=0; i < 20; i++) {
+            for(int j=0; j < 20; j++) {
+                if(environment.get(i).get(j).contains(p)) {
+                    return Optional.of(environment.get(i).get(j));
+                }
+            }
+        }
+
+        return Optional.empty();
     }
 }
