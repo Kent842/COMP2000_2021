@@ -34,6 +34,6 @@ class Grid {
       }
     }
 
-    return Optional.empty();
+    return Optional.empty(); //If not under a cell, returns an empty Environment object
   }
 }

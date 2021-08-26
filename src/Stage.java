@@ -33,7 +33,7 @@ class Stage {
     grid.paint(g, mousePos); // Paint the basic grid
 
     Optional<Environment> underMouse = grid.cellAtPoint(mousePos);
-    if (underMouse.isPresent()) {
+    if (underMouse.isPresent()) { //Checks if the Environment object is empty
       Environment hover = underMouse.get();
 
       if (hover.name == "Building") {
