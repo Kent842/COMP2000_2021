@@ -1,24 +1,25 @@
 import java.awt.*;
 
-class Cell extends Rectangle{
-    // fields
-    static int size = 35;
-    //constructors
-    public Cell(int x, int y){
-        super(x,y,size,size);
-    }
+class Cell extends Rectangle {
+  // fields
+  static int size = 35;
 
-    //methods
-    void paint(Graphics g, Point mousePos){
-        if(contains(mousePos)) {
-            g.setColor(Color.GRAY);
-        } else {
-            g.setColor(Color.WHITE);
-        }
-        g.fillRect(x,y,size,size);
-        g.setColor(Color.BLACK);
-        g.drawRect(x,y,size,size);
+  // constructors
+  public Cell(int x, int y) {
+    super(x, y, size, size);
+  }
+
+  // methods
+  void paint(Graphics g, Point mousePos) {
+    if (contains(mousePos)) {
+      g.setColor(Color.GRAY);
+    } else {
+      g.setColor(Color.WHITE);
     }
+    g.fillRect(x, y, size, size);
+    g.setColor(Color.BLACK);
+    g.drawRect(x, y, size, size);
+  }
 
     @Override
     public boolean contains(Point p) {
@@ -28,7 +29,7 @@ class Cell extends Rectangle{
             return false;
         }
     }
-    public String toString() {
-        return "X Pos:" + super.getLocation().x + "  " + "Y Pos: " + super.getLocation().y + "  ";
-    }
+  public String toString() {
+    return "X Pos:" + super.getLocation().x + "  " + "Y Pos: " + super.getLocation().y + "  ";
+  }
 }
