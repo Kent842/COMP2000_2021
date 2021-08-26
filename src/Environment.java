@@ -1,3 +1,5 @@
+//Name: Kent Cho
+//Student Number: 46490884
 
 import java.awt.*;
 abstract class Environment extends Rectangle {

@@ -1,6 +1,8 @@
+//Name: Kent Cho
+//Student Number: 46490884
+
 import java.awt.*;
 import java.util.*;
-
 class Stage {
   Grid grid;
   ArrayList<ArrayList<Cell>> cells = new ArrayList<ArrayList<Cell>>(); // Array containing the basic grid that needs
@@ -40,7 +42,8 @@ class Stage {
         g.drawString(String.valueOf(hover.name), 740, 40);
         return;
       }
-      g.drawString(String.valueOf(hover.name + "  ") + String.valueOf(hover.heightAboveSeaLevel), 740, 30);
+      g.drawString(String.valueOf("Cell Type:  " + hover.name) , 740, 30);
+      g.drawString(String.valueOf("Elevation:  ") + String.valueOf(hover.heightAboveSeaLevel), 740, 60);
     }
   }
 

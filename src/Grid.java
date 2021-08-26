@@ -1,7 +1,9 @@
+//Name: Kent Cho
+//Student Number: 46490884
+
 import java.awt.*;
 import java.awt.Point;
 import java.util.*;
-
 class Grid {
   // fields
   ArrayList<ArrayList<Cell>> cells = new ArrayList<ArrayList<Cell>>();// Array of the initial cells being painted

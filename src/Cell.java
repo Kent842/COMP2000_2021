@@ -1,5 +1,7 @@
-import java.awt.*;
+//Name: Kent Cho
+//Student Number: 46490884
 
+import java.awt.*;
 class Cell extends Rectangle {
   // fields
   static int size = 35;

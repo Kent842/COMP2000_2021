@@ -1,6 +1,8 @@
+//Name: Kent Cho
+//Student Number: 46490884
+
 import javax.swing.*;
 import java.awt.*;
-
 class Main extends JFrame {
     
     class App extends JPanel {
@@ -37,7 +39,9 @@ class Main extends JFrame {
             this.repaint();
             try {
                 Thread.sleep(20);
-            } catch(InterruptedException e){}
+            } catch(InterruptedException e){
+                
+            }
         }
     }
 }
