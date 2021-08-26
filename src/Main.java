@@ -14,7 +14,6 @@ class Main extends JFrame {
 
         @Override
         public void paint(Graphics g) {
-            //grid.paint(g, getMousePosition()); //Draw Grid, passes in graphics and current mouse position
             stage.paint(g, getMousePosition());
         }
 
@@ -28,7 +27,7 @@ class Main extends JFrame {
     private Main() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         App canvas = new App(); //Create new App called "canvas"
-        this.setContentPane(canvas); //The window's content is going to be showin in "canvas"
+        this.setContentPane(canvas); //The window's content is going to be shown in in "canvas"
         this.pack();
         this.setVisible(true);
     }
