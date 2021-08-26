@@ -36,7 +36,11 @@ class Stage {
         if(underMouse.isPresent()) { //Works good
             Environment hover = underMouse.get();
             
-            g.drawString(String.valueOf(hover) + String.valueOf(hover), 740, 30);
+            if(hover.name == "Building") {
+                g.drawString(String.valueOf(hover.name), 740, 40);
+                return;
+            }
+            g.drawString(String.valueOf(hover.name + "  ") + String.valueOf(hover.heightAboveSeaLevel), 740, 30);
         }
     }
 
@@ -62,7 +66,7 @@ class Stage {
         }
 
         if (determineCellType >= 96 && determineCellType <= 100) {
-            Building b = new Building(location, (int)(Math.random()* 6500) - 500);
+            Building b = new Building(location);
             return b;
         }
 

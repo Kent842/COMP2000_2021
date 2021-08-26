@@ -3,8 +3,23 @@ import java.awt.*;
 
 abstract class Environment extends Rectangle{
     Color color; //The color which the cell is going to be painted
+    String name;
     int heightAboveSeaLevel;
     final int totalRange = 7000;
+
+
+    public Environment(Cell c, Color cellColor, String name, int height) {
+        super(c.x, c.y, 35 ,35);
+        this.color = cellColor;
+        this.name = name;
+        this.heightAboveSeaLevel = height;
+    }
+
+    public Environment(Cell c, Color cellColor, String name) {
+        super(c.x, c.y, 35, 35);
+        this.color = cellColor;
+        this.name = name;
+    }
 
     void paint(Graphics g, Point mousePos) { //Allows each actor to paint itself in the specified cell
         g.setColor(determineShade(heightAboveSeaLevel, this.color));
@@ -14,13 +29,10 @@ abstract class Environment extends Rectangle{
         g.drawRect(super.x, super.y, 35, 35);
     };
 
-    public Environment(Cell c, Color cellColor, int height) {
-        super(c.x, c.y, 35 ,35);
-        this.color = cellColor;
-        this.heightAboveSeaLevel = height;
-    }
-
     private Color determineShade(int height, Color c) {
+        if(this.name == "Building") {
+            return c;
+        }
         if(height >= 6500 - (totalRange/3) && height <= 6500) { // >= 4167 and <= max height
             return c;
         }
